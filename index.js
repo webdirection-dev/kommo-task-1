@@ -41,12 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     stopBtn.addEventListener('click', (e) => {
-        pause = false
         e.preventDefault()
-        timerForm.reset()
-        if (interval) clearInterval(interval)
         setTimer({ hours10: 0, hours: 0, minutes10: 0, minutes: 0, seconds10: 0, seconds: 0 })
+        timerForm.reset()
+        clearInterval(interval)
         delta = null
+        pause = false
     })
 
     pauseBtn.addEventListener('click', (e) => {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        if (pause) {
+        if (interval && pause) {
             pauseBtn.innerHTML = `
                 <div class='pause-icon'></div>
                 <div class='pause-icon'></div>
