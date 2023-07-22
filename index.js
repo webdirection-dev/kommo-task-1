@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const time = formData.get('time')
         if (interval) clearInterval(interval)
         startTimer(time)
+        pauseBtn.innerHTML = `
+                <div class='pause-icon'></div>
+                <div class='pause-icon'></div>
+                Пауза
+            `
     })
 
     stopBtn.addEventListener('click', (e) => {
@@ -47,6 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(interval)
         delta = null
         pause = false
+        pauseBtn.innerHTML = `
+                <div class='pause-icon'></div>
+                <div class='pause-icon'></div>
+                Пауза
+            `
     })
 
     pauseBtn.addEventListener('click', (e) => {
