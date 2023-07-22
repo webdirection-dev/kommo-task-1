@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timerForm.reset()
         if (interval) clearInterval(interval)
         setTimer({ hours10: 0, hours: 0, minutes10: 0, minutes: 0, seconds10: 0, seconds: 0 })
-        buffer = { hours10: 0, hours: 0, minutes10: 0, minutes: 0, seconds10: 0, seconds: 0 }
+        delta = null
     })
 
     pauseBtn.addEventListener('click', (e) => {
