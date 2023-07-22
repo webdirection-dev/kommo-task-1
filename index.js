@@ -39,11 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (interval) clearInterval(interval)
         startTimer(time)
         continued = true
-        pauseBtn.innerHTML = `
-                <div class='pause-icon'></div>
-                <div class='pause-icon'></div>
-                Пауза
-            `
+        pausedActions('Пауза')
+        // pauseBtn.innerHTML = `
+        //         <div class='pause-icon'></div>
+        //         <div class='pause-icon'></div>
+        //         Пауза
+        //     `
     })
 
     stopBtn.addEventListener('click', (e) => {
@@ -54,32 +55,38 @@ document.addEventListener('DOMContentLoaded', () => {
         delta = null
         pause = false
         continued = false
-        pauseBtn.innerHTML = `
-                <div class='pause-icon'></div>
-                <div class='pause-icon'></div>
-                Пауза
-            `
+        pausedActions('Пауза')
+
+        // pauseBtn.innerHTML = `
+        //         <div class='pause-icon'></div>
+        //         <div class='pause-icon'></div>
+        //         Пауза
+        //     `
     })
 
     pauseBtn.addEventListener('click', (e) => {
         e.preventDefault()
         if (continued && !pause) {
-            pauseBtn.innerHTML = `
-                <div class='pause-icon'></div>
-                <div class='pause-icon'></div>
-                Продолжить
-            `
+            pausedActions('Продолжить')
+
+            // pauseBtn.innerHTML = `
+            //     <div class='pause-icon'></div>
+            //     <div class='pause-icon'></div>
+            //     Продолжить
+            // `
             clearInterval(interval)
             pause = true
             return
         }
 
         if (pause) {
-            pauseBtn.innerHTML = `
-                <div class='pause-icon'></div>
-                <div class='pause-icon'></div>
-                Пауза
-            `
+            pausedActions('Пауза')
+
+            // pauseBtn.innerHTML = `
+            //     <div class='pause-icon'></div>
+            //     <div class='pause-icon'></div>
+            //     Пауза
+            // `
             pauseTimer()
             pause = false
             return
@@ -121,6 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
         timer.seconds.innerHTML = seconds !== buffer.seconds ? `<div class='animate'>${seconds}</div>` : seconds
 
         buffer = { hours10, hours, minutes10, minutes, seconds10, seconds }
+    }
+
+    function pausedActions(title) {
+        pauseBtn.innerHTML = `
+                <div class='pause-icon'></div>
+                <div class='pause-icon'></div>
+                ${title}
+            `
     }
 })
 
