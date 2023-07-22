@@ -100,11 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setTimer({ hours10, hours, minutes10, minutes, seconds10, seconds }) {
-        timer.hours10.innerText = hours10
-        timer.hours.innerText = hours
-        timer.minutes10.innerText = minutes10
-        timer.minutes.innerText = minutes
-
         timer.hours10.innerHTML = hours10 !== buffer.hours10 ? `<div class='animate'>${hours10}</div>` : hours10
         timer.hours.innerHTML = hours !== buffer.hours ? `<div class='animate'>${hours}</div>` : hours
         timer.minutes10.innerHTML = minutes10 !== buffer.minutes10 ? `<div class='animate'>${minutes10}</div>` : minutes10
