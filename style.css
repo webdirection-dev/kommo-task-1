@@ -99,7 +99,7 @@ body {
 
 .pause {
     background: #14b8a6;
-    margin: 0;
+    margin: 0 !important;
 }
 
 .pause:hover {
