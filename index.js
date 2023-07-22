@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     "use strict"
 
-    let interval = null, pause = false, delta = null
+    let interval = null, pause = false, delta = null, continued = false
 
     const timerForm = document.getElementById("timerForm"),
         stopBtn = document.getElementById('stopBtn'),
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const time = formData.get('time')
         if (interval) clearInterval(interval)
         startTimer(time)
+        continued = true
         pauseBtn.innerHTML = `
                 <div class='pause-icon'></div>
                 <div class='pause-icon'></div>
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(interval)
         delta = null
         pause = false
+        continued = false
         pauseBtn.innerHTML = `
                 <div class='pause-icon'></div>
                 <div class='pause-icon'></div>
@@ -61,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pauseBtn.addEventListener('click', (e) => {
         e.preventDefault()
-        if (interval && !pause) {
+        if (continued && !pause) {
             pauseBtn.innerHTML = `
                 <div class='pause-icon'></div>
                 <div class='pause-icon'></div>
@@ -72,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        if (interval && pause) {
+        if (pause) {
             pauseBtn.innerHTML = `
                 <div class='pause-icon'></div>
                 <div class='pause-icon'></div>
