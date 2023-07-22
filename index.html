@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@700&display=swap"
+        rel="stylesheet" />
+
+    <title>1 task | Таймер</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form id='timerForm' class="timer" submit>
+            <div class="info">
+                Установить таймер на
+                <input type="text" name="time" aria-label="Число минут для таймера" value="10" />
+                минут
+            </div>
+
+            <div class="countdown">
+                <div class="num" id="hours10">0</div>
+                <div class="num" id="hours">0</div>
+                <div class="dots">:</div>
+                <div class="num" id="minutes10">0</div>
+                <div class="num" id="minutes">0</div>
+                <div class="dots">:</div>
+                <div class="num" id="seconds10">0</div>
+                <div class="num" id="seconds">0</div>
+            </div>
+
+            <div class="btns">
+                <button type="submit" class="button start">
+                    <img src="./img/play.svg" alt="play" />
+                    Новый
+                </button>
+
+                <button id='stopBtn' class="button stop">
+                    <div class='stop-icon'></div>
+                    Сбросить
+                </button>
+
+                <button id='pauseBtn' class="button pause">
+                    <div class='pause-icon'></div>
+                    <div class='pause-icon'></div>
+                    Пауза
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
