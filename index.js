@@ -40,11 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         startTimer(time)
         continued = true
         pausedActions('Пауза')
-        // pauseBtn.innerHTML = `
-        //         <div class='pause-icon'></div>
-        //         <div class='pause-icon'></div>
-        //         Пауза
-        //     `
     })
 
     stopBtn.addEventListener('click', (e) => {
@@ -56,24 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
         pause = false
         continued = false
         pausedActions('Пауза')
-
-        // pauseBtn.innerHTML = `
-        //         <div class='pause-icon'></div>
-        //         <div class='pause-icon'></div>
-        //         Пауза
-        //     `
     })
 
     pauseBtn.addEventListener('click', (e) => {
         e.preventDefault()
         if (continued && !pause) {
             pausedActions('Продолжить')
-
-            // pauseBtn.innerHTML = `
-            //     <div class='pause-icon'></div>
-            //     <div class='pause-icon'></div>
-            //     Продолжить
-            // `
             clearInterval(interval)
             pause = true
             return
@@ -81,12 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (pause) {
             pausedActions('Пауза')
-
-            // pauseBtn.innerHTML = `
-            //     <div class='pause-icon'></div>
-            //     <div class='pause-icon'></div>
-            //     Пауза
-            // `
             pauseTimer()
             pause = false
             return
