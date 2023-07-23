@@ -1,5 +1,5 @@
 ## kommo-task-1
 
-- JS Vanila
+- JS Vanilla
 
 [DEMO](https://kommo-task-1.vercel.app)
